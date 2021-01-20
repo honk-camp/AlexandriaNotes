@@ -15,7 +15,9 @@ const generateResults = (term = searchEl.value) => {
 
   resultsEl.innerHTML = '';
 
-  for (const n of notes.filter((x) => x.title.toLowerCase().match(new RegExp(term.toLowerCase().split('').join('.*'))))) {
+  const fuzzyRegex = new RegExp(term.toLowerCase().split('').join('.*'));
+
+  for (const n of notes.filter((x) => x.content.toLowerCase().match(fuzzyRegex) || x.title.toLowerCase().match(fuzzyRegex))) {
     const cardEl = document.createElement('div');
     cardEl.className = 'card';
 
