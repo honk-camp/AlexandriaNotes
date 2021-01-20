@@ -114,6 +114,10 @@ body {
     height: 77vh;
 }
 
+.editor-preview {
+    background: #181a1b;
+}
+
 .editor-toolbar a {
     color: unset !important;
 }
@@ -139,8 +143,16 @@ body {
     background-color: #181a1b;
 }
 
-a[title="Toggle Preview (Ctrl-P)"], a[title="Toggle Side by Side (F9)"], a[title="Toggle Fullscreen (F11)"], a[title="Toggle Fullscreen (F11)"] + i {
+a[title="Toggle Side by Side (F9)"], a[title="Toggle Fullscreen (F11)"] {
     display: none !important;
+}
+
+.editor-toolbar a.active, .editor-toolbar a:hover {
+    background: #323537;
+}
+
+.editor-toolbar.disabled-for-preview a:not(.no-disable) {
+    background: #0a0a0a;
 }
 
 * {
