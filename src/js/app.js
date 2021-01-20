@@ -95,4 +95,6 @@ setInterval(() => {
 
     generateResults();
   }
+
+  if (simplemde.isPreviewActive()) simplemde.togglePreview();
 }, 500);
