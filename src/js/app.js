@@ -1,4 +1,4 @@
-const notes = localStorage.getItem('notes') || [];
+const notes = JSON.parse(localStorage.getItem('notes')) || [];
 
 const resultsEl = document.getElementById('results');
 const searchEl = document.getElementById('search');
@@ -11,7 +11,7 @@ const addNoteEl = document.getElementById('add-note');
 let currentNote;
 
 const generateResults = (term = searchEl.value) => {
-  localStorage.setItem('notes', notes);
+  localStorage.setItem('notes', JSON.stringify(notes));
 
   resultsEl.innerHTML = '';
 
