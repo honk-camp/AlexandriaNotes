@@ -14,11 +14,11 @@ body {
     display: grid;
     grid-template-columns: auto 1fr;
 
-    gap: 20px;
+    gap: 22px;
 }
 
 * {
-    color: rgba(255, 255, 255, .87) !important;
+    color: rgba(255, 255, 255, .87);
     font-family: Roboto, sans-serif;
 
     box-sizing: border-box;
@@ -106,6 +106,16 @@ body {
     cursor: pointer;
 
     box-shadow: rgba(0, 0, 0, .1) 0 0 5px;
+}
+
+.CodeMirror {
+    background: #181a1b;
+    border: 1px solid #666;
+    height: 77vh;
+}
+
+.editor-toolbar a {
+    color: unset !important;
 }
 
 ::-webkit-scrollbar {

@@ -1,3 +1,6 @@
+const simplemde = new SimpleMDE();
+console.log(simplemde);
+
 const notes = JSON.parse(localStorage.getItem('notes')) || [];
 
 const resultsEl = document.getElementById('results');
@@ -52,7 +55,8 @@ const showNote = (note) => {
   currentNote = note;
 
   noteTitleEl.textContent = note.title;
-  noteContentEl.textContent = note.content;
+  simplemde.value(note.content);
+  // noteContentEl.textContent = note.content;
 };
 
 generateResults();
@@ -82,8 +86,13 @@ noteTitleEl.oninput = () => {
   generateResults();
 };
 
-noteContentEl.oninput = () => {
-  currentNote.content = noteContentEl.innerText;
+let lastValue = '';
+setInterval(() => {
+  if (lastValue !== simplemde.value()) {
+    lastValue = simplemde.value();
 
-  generateResults();
-};
+    currentNote.content = lastValue;
+
+    generateResults();
+  }
+}, 500);
