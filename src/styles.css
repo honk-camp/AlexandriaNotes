@@ -139,6 +139,10 @@ body {
     background-color: #181a1b;
 }
 
+a[title="Toggle Preview (Ctrl-P)"], a[title="Toggle Side by Side (F9)"], a[title="Toggle Fullscreen (F11)"], a[title="Toggle Fullscreen (F11)"] + i {
+    display: none !important;
+}
+
 * {
     scrollbar-color: #2a2c2e #1c1e1f;
 }
