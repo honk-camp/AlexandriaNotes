@@ -114,6 +114,10 @@ body {
     height: 77vh;
 }
 
+.CodeMirror .CodeMirror-cursor {
+  border-left: 1px solid rgba(255, 255, 255, .87);
+}
+
 .editor-preview {
     background: #181a1b;
 }
