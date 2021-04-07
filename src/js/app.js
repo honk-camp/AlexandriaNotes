@@ -57,6 +57,11 @@ const showNote = (note) => {
   noteTitleEl.textContent = note.title;
   simplemde.value(note.content);
   // noteContentEl.textContent = note.content;
+  //If in preview mode update the preview to reflect the contents of the selected note
+  if(simplemde.isPreviewActive())
+  {
+    simplemde.codemirror.getWrapperElement().lastChild.innerHTML = simplemde.options.previewRender(simplemde.codemirror.getValue());
+  }
 };
 
 generateResults();
